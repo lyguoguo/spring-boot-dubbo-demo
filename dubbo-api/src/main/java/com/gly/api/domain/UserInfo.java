@@ -12,4 +12,5 @@ public class UserInfo implements Serializable {
     private String phone;
     private Integer age;
     private String address;
+    private String traceId;
 }
