@@ -17,6 +17,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserInfo getByUserId(Integer userId) {
         String cId = RpcContext.getContext().getAttachment("traceId");
+        log.info("dubbo rpc traceId:{}",cId);
+        log.info("log traceId:{}",MDC.get("traceId"));
         return new UserInfo().setAddress("浙江省杭州市").setAge(18).setName("郭郭")
                 .setPhone("15678182354").setTraceId(cId);
     }

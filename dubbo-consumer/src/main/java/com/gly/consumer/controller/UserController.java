@@ -21,10 +21,15 @@ public class UserController {
 
     @GetMapping("/getuserbyid")
     public String getUserById(Integer id){
-        log.info("local service traceId:{}", MDC.get("traceId"));
+        String cId = MDC.get("traceId");
+        log.info("local service traceId:{}",cId);
         UserInfo userInfo = userService.getByUserId(id);
         if(null == userInfo){
             return "该用户不存在";
+        }
+        String rId = userInfo.getTraceId();
+        if(cId.equals(rId)){
+            log.info("traceId传输成功");
         }
         log.info("remote service traceId:{}",userInfo.getTraceId());
         return JSON.toJSONString(userInfo);

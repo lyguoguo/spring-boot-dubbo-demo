@@ -9,7 +9,7 @@ import org.slf4j.MDC;
 import java.util.UUID;
 
 
-@Activate(group = {Constants.CONSUMER} , order = 1)
+@Activate(group = {Constants.PROVIDER})
 public class TraceIdFilter implements Filter {
 
 	@Override
@@ -17,8 +17,8 @@ public class TraceIdFilter implements Filter {
 		String traceId = invocation.getAttachment("traceId");
 		if(StringUtils.isBlank(traceId)) {
 			traceId = UUID.randomUUID().toString().replace("-", "");
+			RpcContext.getContext().setAttachment("traceId", traceId);
 		}
-		RpcContext.getContext().setAttachment("traceId", traceId);
 		MDC.put("traceId",traceId);
 		return invoker.invoke(invocation);
 	}
