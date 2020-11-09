@@ -1,10 +1,11 @@
 package com.gly.consumer.controller;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSON;
 import com.gly.api.domain.UserInfo;
 import com.gly.api.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.dubbo.config.annotation.Reference;
+//import org.apache.dubbo.config.annotation.Reference;
 import org.slf4j.MDC;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

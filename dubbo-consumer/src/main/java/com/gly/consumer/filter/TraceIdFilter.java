@@ -1,8 +1,9 @@
 package com.gly.consumer.filter;
 
+import com.alibaba.dubbo.rpc.RpcContext;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.dubbo.rpc.RpcContext;
+//import org.apache.dubbo.rpc.RpcContext;
 import org.slf4j.MDC;
 import org.springframework.core.annotation.Order;
 import org.springframework.web.filter.OncePerRequestFilter;

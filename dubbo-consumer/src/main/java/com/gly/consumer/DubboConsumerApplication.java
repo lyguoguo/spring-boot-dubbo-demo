@@ -1,18 +1,19 @@
 package com.gly.consumer;
 
 //import org.apache.dubbo.boot.annotation.EnableDubboConfiguration;
-import org.apache.dubbo.config.spring.context.annotation.DubboComponentScan;
-import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
-import org.apache.dubbo.config.spring.context.annotation.EnableDubboConfig;
+//import org.apache.dubbo.config.spring.context.annotation.DubboComponentScan;
+//import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
+//import org.apache.dubbo.config.spring.context.annotation.EnableDubboConfig;
+import com.alibaba.dubbo.spring.boot.annotation.EnableDubboConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @SpringBootApplication
-//@EnableDubboConfiguration
+@EnableDubboConfiguration
 //dubbo.scan.base-packages=com.my.dubbo.providerm.serviceimpl
 
-@DubboComponentScan
+//@DubboComponentScan
 @ServletComponentScan
 public class DubboConsumerApplication {
 

@@ -1,15 +1,15 @@
 package com.gly.producer.filter;
 
-import com.alibaba.dubbo.common.Constants;
-import com.alibaba.dubbo.common.extension.Activate;
-import com.alibaba.dubbo.common.utils.StringUtils;
-import com.alibaba.dubbo.rpc.*;
+import org.apache.dubbo.common.constants.CommonConstants;
+import org.apache.dubbo.common.extension.Activate;
+import org.apache.dubbo.common.utils.StringUtils;
+import org.apache.dubbo.rpc.*;
 import org.slf4j.MDC;
 
 import java.util.UUID;
 
 
-@Activate(group = {Constants.PROVIDER})
+@Activate(group = {CommonConstants.PROVIDER})
 public class TraceIdFilter implements Filter {
 
 	@Override
